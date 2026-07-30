@@ -1,0 +1,6 @@
+---
+float64 origin_x
+float64 origin_y
+float64 origin_z
+float64 square_size
+bool success

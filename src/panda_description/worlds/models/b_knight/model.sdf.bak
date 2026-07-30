@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="b_knight">
+    <static>false</static>
+    <link name="link">
+      <inertial>
+        <mass>0.025</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://b_knight/b_knight.stl</uri>
+            <scale>0.03 0.03 0.03</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <!-- Medium grey ambient base -->
+          <ambient>0.3 0.3 0.3 1</ambient>
+
+          <!-- Standard 50% neutral grey diffuse body -->
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          
+          <!-- Pure white specular highlight for a clean polished gloss -->
+          <specular>0.9 0.9 0.9 1</specular>
+
+          <!-- Sharpness of the sheen -->
+          <shininess>100</shininess>
+        </material>
+      </visual>
+
+      <collision name="collision">
+        <pose>0 0 0.019 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.020 0.020 0.038</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <kp>100000.0</kp>
+              <kd>1.0</kd>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+    </link>
+  </model>
+</sdf>

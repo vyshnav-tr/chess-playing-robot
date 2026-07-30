@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<sdf version="1.6">
+  <model name="grey_bishop">
+    <static>false</static>
+    <link name="link">
+      <inertial>
+        <mass>0.025</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://b_bishop/b_bishop.stl</uri>
+            <scale>0.027000 0.027000 0.027000</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.25 0.15 0.08 1</ambient>
+          <diffuse>0.35 0.22 0.12 1</diffuse>
+          <specular>0.4 0.4 0.4 1</specular>
+          <shininess>100</shininess>
+        </material>
+      </visual>
+      <collision name="collision">
+        <pose>0.000000 0.000000 0.018000 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.018000 0.018000 0.036000</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <kp>100000.0</kp>
+              <kd>1.0</kd>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+    </link>
+  </model>
+</sdf>

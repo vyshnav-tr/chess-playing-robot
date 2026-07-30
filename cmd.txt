@@ -1,0 +1,2 @@
+ros2 action send_goal /pick_place_piece board_interfaces/action/PickPlacePiece "{source_col: 0, source_row: 0, target_col: 7, target_row: 7}"
+ros2 run rqt_image_view rqt_image_view

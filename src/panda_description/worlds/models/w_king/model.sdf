@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<sdf version="1.6">
+  <model name="w_king">
+    <static>false</static>
+    <link name="link">
+      <inertial>
+        <mass>0.04</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://w_king/w_king.stl</uri>
+            <scale>0.027000 0.027000 0.027000</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/White</name>
+          </script>
+          <ambient>0.85 0.80 0.65 1</ambient>
+          <diffuse>0.90 0.85 0.70 1</diffuse>
+        </material>
+      </visual>
+      <collision name="collision">
+        <pose>0.000000 0.000000 0.022500 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.022500 0.022500 0.045000</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <kp>100000.0</kp>
+              <kd>1.0</kd>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+    </link>
+  </model>
+</sdf>
